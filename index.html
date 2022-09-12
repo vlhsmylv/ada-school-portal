@@ -66,8 +66,33 @@
       </div>
     </div>
   </body>
-  <script type="module">
-    import items from "./items.json";
+  <script>
+    const items = [
+      {
+        "title": "Todo",
+        "href": "https://todoist.com"
+      },
+      {
+        "title" : "Blackboard",
+        "href": "https://ada.blackboard.com"
+      },
+      {
+        "title": "Email",
+        "href": "https://outlook.office.com"
+      },
+      {
+        "title": "Notion",
+        "href": "notion://"
+      },
+      {
+        "title": "Banner",
+        "href": "https://reg-prod.ec.ada.edu.az/StudentRegistrationSsb/ssb/registrationHistory/registrationHistory"
+      },
+      {
+        "title" : "Code-fi",
+        "href" : "https://www.youtube.com/watch?v=f02mOEt11OQ"
+      }
+    ]
 
     const container = document.querySelector("#items");
 
@@ -91,7 +116,7 @@
       `);
       anchor.textContent = title;
 
-      container.append(container);
+      container.append(anchor);
     }
   </script>
 </html>

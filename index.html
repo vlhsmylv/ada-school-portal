@@ -58,79 +58,40 @@
           align-items: center;
           width: 500px;
         "
+        id="items"
       >
-        <a
-          href="https://todoist.com"
-          target="_blank"
-          style="
-            background: black;
-            color: white;
-            border: 1px solid lightgray;
-            padding: 15px;
-            text-decoration: none;
-            width: 200px;
-            font-size: 20px;
-            text-align: center;
-          "
-          class="hover-link"
-        >
-          Todo
-        </a>
-        <a
-          href="https://ada.blackboard.com"
-          target="_blank"
-          style="
-            background: black;
-            color: white;
-            border: 1px solid lightgray;
-            padding: 15px;
-            text-decoration: none;
-            width: 200px;
-            font-size: 20px;
-            text-align: center;
-          "
-          class="hover-link"
-        >
-          Blackboard
-        </a>
-        <a
-          href="https://outlook.office.com"
-          target="_blank"
-          style="
-            background: black;
-            color: white;
-            border: 1px solid lightgray;
-            padding: 15px;
-            text-decoration: none;
-            width: 200px;
-            font-size: 20px;
-            text-align: center;
-          "
-          class="hover-link"
-        >
-          Email
-        </a>
-        <a
-          href="notion://"
-          target="_blank"
-          style="
-            background: black;
-            color: white;
-            border: 1px solid lightgray;
-            padding: 15px;
-            text-decoration: none;
-            width: 200px;
-            font-size: 20px;
-            text-align: center;
-          "
-          class="hover-link"
-        >
-          Notion
-        </a>
       </div>
       <div style="margin-top: 30px; color: white;">
         &copy; Dev by <a href="https://valehismayilov.com" style="font-weight: bold; color: white;" target="_blank">Valeh Ismayilov</a>
       </div>
     </div>
   </body>
+  <script type="module">
+    import items from "./items.json";
+
+    const container = document.querySelector("#items");
+
+    for(let item of items) {
+      const {title, href} = item;
+
+      const anchor = document.createElement("a");
+
+      anchor.href = href;
+      anchor.target = "_blank";
+      anchor.classList.add("hover-link")
+      anchor.setAttribute("style", `
+        background: black;
+        color: white;
+        border: 1px solid lightgray;
+        padding: 15px;
+        text-decoration: none;
+        width: 200px;
+        font-size: 20px;
+        text-align: center;
+      `);
+      anchor.textContent = title;
+
+      container.append(container);
+    }
+  </script>
 </html>
